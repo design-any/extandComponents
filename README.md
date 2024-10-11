@@ -1,9 +1,9 @@
-#### Introduction
+#### 介绍
 
-This library is used to write extension components for design any
+此库用于编写 design-any 的拓展组件
 
 ###
 
-function:
+运行：
 1.yarn install
 2.npm run test
