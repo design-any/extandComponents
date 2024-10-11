@@ -68,4 +68,8 @@ export default class TextComponent extends EngineComponent {
 }
 </script>
 
-<style scoped></style>
+<style lang="less" scoped>
+span {
+  background: transparent;
+}
+</style>
