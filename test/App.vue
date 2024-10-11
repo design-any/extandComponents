@@ -1,10 +1,9 @@
 <template>
   <div ref="topdom" style="width: 100%; height: 100%; position: relative">
     <div style="width: 300px; height: 100%; float: left">
-      <button @click="loadCompJs" style="width: 70%; height: 30px">动态加载组件</button>
-      <div style="width: 100%; height: calc(100% - 30px)">
+      <div style="width: 100%; height: 100%; background-color: green">
         <template v-for="comp in allComponents" :key="comp.compCode">
-          <div style="width: 100%; height: 32px; line-height: 32px; cursor: pointer" :style="{ background: currentChooseCode === comp.compCode ? '#cdcdcd' : 'white' }" @click="chooseComp(comp.compCode)">{{ comp.groupName + '|' + comp.name }}</div>
+          <div style="width: 100%; height: 32px; line-height: 32px; cursor: pointer" :style="{ background: currentChooseCode === comp.compCode ? '#cdcdcd' : 'transparent' }" @click="chooseComp(comp.compCode)">{{ comp.groupName + '|' + comp.name }}</div>
         </template>
       </div>
     </div>
@@ -32,6 +31,7 @@ export default class App extends Vue {
   mounted() {
     const instance = getCurrentInstance()
     this.curentApp = instance.appContext.app
+    this.loadCompJs()
   }
 
   private async loadCompJs() {

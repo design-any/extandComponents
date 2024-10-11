@@ -1,7 +1,9 @@
-# designer_thrityFreeComponent_demo
+#### Introduction
 
-#### 介绍
-
-用于编写 demo，给低代码产品开发自由组件。通过 npm 引入低代码的部分协议.
+This library is used to write extension components for design any
 
 ###
+
+function:
+1.yarn install
+2.npm run test
