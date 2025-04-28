@@ -1,13 +1,15 @@
 <template>
   <div ref="topdom" style="width: 100%; height: 100%; position: relative">
     <div style="width: 300px; height: 100%; float: left">
-      <div style="width: 100%; height: 100%; background-color: green">
+      <div style="width: 100%; height: 50%; background-color: gray">
         <template v-for="comp in allComponents" :key="comp.compCode">
           <div style="width: 100%; height: 32px; line-height: 32px; cursor: pointer"
             :style="{ background: currentChooseCode === comp.compCode ? '#cdcdcd' : 'transparent' }" @click="chooseComp(comp.compCode)">
             分组:{{comp.groupName }}----组件名: {{ comp.name }}</div>
         </template>
-        <!-- ------------------------------------------------------- -->
+      </div>
+      <!-- ------------------------------------------------------- -->
+      <div style="width: 100%; height: 50%; background-color: green">
         <template v-for="cpage in allCustomPages" :key="cpage.code">
           <div style="width: 100%; height: 32px; line-height: 32px; cursor: pointer"
             :style="{ background: currentChooseCode === cpage.code ? '#cdcdcd' : 'transparent' }" @click="choosePage(cpage.code)">
@@ -41,6 +43,7 @@ export default class App extends Vue {
   private allCustomPages: CPageInfo[] = []
   private currentChooseCode: string = ''
   private curentApp: any = null
+
   mounted() {
     const instance = getCurrentInstance()
     this.curentApp = instance.appContext.app
