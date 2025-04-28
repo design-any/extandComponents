@@ -3,7 +3,9 @@
     <div style="width: 300px; height: 100%; float: left">
       <div style="width: 100%; height: 100%; background-color: green">
         <template v-for="comp in allComponents" :key="comp.compCode">
-          <div style="width: 100%; height: 32px; line-height: 32px; cursor: pointer" :style="{ background: currentChooseCode === comp.compCode ? '#cdcdcd' : 'transparent' }" @click="chooseComp(comp.compCode)">{{ comp.groupName + '|' + comp.name }}</div>
+          <div style="width: 100%; height: 32px; line-height: 32px; cursor: pointer"
+            :style="{ background: currentChooseCode === comp.compCode ? '#cdcdcd' : 'transparent' }" @click="chooseComp(comp.compCode)">
+            分组:{{comp.groupName }}----组件名: {{ comp.name }}</div>
         </template>
       </div>
     </div>
@@ -18,8 +20,10 @@ import vue from 'vue'
 import { ref, h, render, onMounted, createApp } from 'vue'
 import { Options, Vue } from 'vue-class-component'
 import { getAllComponents, DCompInfo, findSystemCompByCode, findOrginCompInfo } from '@design-any/interface/dist/LayoutAttr/ComponentInfo'
-
 import { designDrawDomReal } from '@design-any/interface/dist/utils/drawVueDom'
+
+import { platform } from '@design-any/interface'
+
 import ViewShell from './ViewShell.vue'
 import { getCurrentInstance } from 'vue'
 
@@ -35,7 +39,7 @@ export default class App extends Vue {
   }
 
   private async loadCompJs() {
-    this.allComponents = getAllComponents()
+    this.allComponents = getAllComponents(platform.page)
     this.$forceUpdate()
   }
 

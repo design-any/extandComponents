@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 // ************************************************
-import '../dist/designany.basiccomps.min.css'
-import '../dist/designany.basiccomps.min.js'
+import '../dist/designany.extands.min.css'
+import '../dist/designany.extands.min.js'
 // ************************************************
 var currentApp = createApp(App)
 

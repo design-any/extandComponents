@@ -22,7 +22,7 @@
     "strictPropertyInitialization": false,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@basicComponents/*": ["basicComponents/*"],
+      "@basicComponents/*": ["components/*"],
       "@assets/*": ["assets/*"]
     },
     "plugins": [

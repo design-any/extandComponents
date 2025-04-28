@@ -1,14 +1,9 @@
 {
   "name": "@design-any/basiccomps",
   "version": "0.0.01",
-  "main": "dist/designany.basiccomps.min.js",
+  "main": "dist/designany.extands.min.js",
   "description": "DesignAny的开放组件",
-  "files": [
-    "dist",
-    "README.md",
-    "README.en.md",
-    "LICENSE"
-  ],
+  "files": ["dist", "README.md", "README.en.md", "LICENSE"],
   "author": {
     "name": "design-any"
   },
@@ -91,7 +86,7 @@
   "dependencies": {
     "@babel/plugin-syntax-top-level-await": "^7.14.5",
     "@babel/plugin-transform-modules-commonjs": "^7.24.8",
-    "@design-any/interface": "^0.0.63",
+    "@design-any/interface": "^0.0.681",
     "@element-plus/icons-vue": "^2.3.1",
     "@logicflow/core": "1.2.10",
     "@logicflow/extension": "^1.2.10",

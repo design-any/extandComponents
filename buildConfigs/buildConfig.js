@@ -8,10 +8,10 @@ let currentDir = path.resolve(__dirname).replace('\\buildConfigs', '')
 // ******************web打包***************************************************
 let baseconfig = {
   target: 'web',
-  entry: './basicComponents/index.js',
+  entry: './index.js',
   devtool: process.env.NODE_ENV === 'development' ? 'source-map' : undefined,
   output: {
-    filename: 'designany.basiccomps.min.js',
+    filename: 'designany.extands.min.js',
     path: path.resolve(__dirname, '../dist'),
     library: 'dabc',
     libraryTarget: 'umd',
@@ -190,8 +190,8 @@ let baseconfig = {
       'window.jQuery': 'jquery'
     }),
     new MiniCssExtractPlugin({
-      filename: 'designany.basiccomps.min.css',
-      chunkFilename: `designany.basiccomps.min_[contenthash:8].css`
+      filename: 'designany.extands.min.css',
+      chunkFilename: `designany.extands.min_[contenthash:8].css`
     }),
     new VueLoaderPlugin()
   ],
