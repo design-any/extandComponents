@@ -1,15 +1,15 @@
 const componentsFiles = require.context('./components', true, /\.(vue)$/)
 
 componentsFiles.keys().reduce((modules, modulePath) => {
-  const value = modulesFiles(modulePath)
+  const value = componentsFiles(modulePath)
   // Vue.component(getUuid(), value.default)
   return modules
 }, {})
 // *********************************************************
 
-const pages = require.context('./pages', true, /\.(vue)$/)
-pages.keys().reduce((modules, modulePath) => {
-  const value = modulesFiles(modulePath)
+const pageFiles = require.context('./pages', true, /\.(vue)$/)
+pageFiles.keys().reduce((modules, modulePath) => {
+  const value = pageFiles(modulePath)
   // Vue.component(getUuid(), value.default)
   return modules
 }, {})
