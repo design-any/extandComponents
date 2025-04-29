@@ -7,7 +7,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 let currentDir = path.resolve(__dirname).replace('\\buildConfigs', '')
 // ******************web打包***************************************************
 let baseconfig = {
-  target: 'web',
+  target: 'node',
   entry: './index.js',
   devtool: process.env.NODE_ENV === 'development' ? 'source-map' : undefined,
   output: {

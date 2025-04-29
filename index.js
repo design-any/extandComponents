@@ -13,3 +13,5 @@ pageFiles.keys().reduce((modules, modulePath) => {
   // Vue.component(getUuid(), value.default)
   return modules
 }, {})
+
+export default {}
