@@ -16,7 +16,6 @@ let baseconfig = {
     library: 'dabc',
     libraryTarget: 'umd',
     umdNamedDefine: true,
-    clean: true,
     globalObject: 'window'
   },
   experiments: {
@@ -187,8 +186,7 @@ let baseconfig = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      Vue: ['vue', 'default'] // 确保 Vue 可用
+      'window.jQuery': 'jquery'
     }),
     new MiniCssExtractPlugin({
       filename: 'designany.extands.min.css',
@@ -197,18 +195,8 @@ let baseconfig = {
     new VueLoaderPlugin()
   ],
   externals: {
-    vue: {
-      root: 'Vue',
-      commonjs: 'vue',
-      commonjs2: 'vue',
-      amd: 'vue'
-    },
-    '@design-any/interface': {
-      root: 'DesignAnyInterface',
-      commonjs: '@design-any/interface',
-      commonjs2: '@design-any/interface',
-      amd: '@design-any/interface'
-    },
+    vue: 'Vue',
+    '@design-any/interface': 'DesignAnyInterface',
     'element-plus': 'element-plus',
     '@element-plus/icons-vue': '@element-plus/icons-vue'
   },
