@@ -7,7 +7,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 let currentDir = path.resolve(__dirname).replace('\\buildConfigs', '')
 // ******************web打包***************************************************
 let baseconfig = {
-  target: 'node',
+  target: 'web',
   entry: './index.js',
   devtool: process.env.NODE_ENV === 'development' ? 'source-map' : undefined,
   output: {
@@ -187,7 +187,8 @@ let baseconfig = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      'window.jQuery': 'jquery'
+      'window.jQuery': 'jquery',
+      Vue: ['vue', 'default'] // 确保 Vue 可用
     }),
     new MiniCssExtractPlugin({
       filename: 'designany.extands.min.css',
@@ -202,9 +203,14 @@ let baseconfig = {
       commonjs2: 'vue',
       amd: 'vue'
     },
+    '@design-any/interface': {
+      root: 'DesignAnyInterface',
+      commonjs: '@design-any/interface',
+      commonjs2: '@design-any/interface',
+      amd: '@design-any/interface'
+    },
     'element-plus': 'element-plus',
-    '@element-plus/icons-vue': '@element-plus/icons-vue',
-    '@design-any/interface': '@design-any/interface'
+    '@element-plus/icons-vue': '@element-plus/icons-vue'
   },
   resolve: {
     modules: [
