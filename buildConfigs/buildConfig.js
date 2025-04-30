@@ -13,7 +13,7 @@ let baseconfig = {
   output: {
     filename: 'designany.extands.min.js',
     path: path.resolve(__dirname, '../dist'),
-    library: 'dabc',
+    library: 'DesignanyExtands',
     libraryTarget: 'umd',
     umdNamedDefine: true,
     globalObject: 'window'
