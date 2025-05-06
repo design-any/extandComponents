@@ -15,6 +15,9 @@ import { CustomPageBase } from '@design-any/interface/dist/LayoutInterface/Custo
 @Options({})
 export default class demoCustomPage1 extends CustomPageBase {
   mounted() {}
+  beforeUnmount() {
+    console.warn('custom page is destorying')
+  }
 }
 </script>
 
