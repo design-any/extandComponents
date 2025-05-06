@@ -16,6 +16,7 @@ let baseconfig = {
     library: 'DesignanyExtands_[hash]',
     libraryTarget: 'umd',
     umdNamedDefine: true,
+    clean: true,
     globalObject: 'window'
   },
   experiments: {
