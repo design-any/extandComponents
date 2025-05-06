@@ -11,9 +11,9 @@ let baseconfig = {
   entry: './index.js',
   devtool: process.env.NODE_ENV === 'development' ? 'source-map' : undefined,
   output: {
-    filename: 'designany.extands.min.js',
+    filename: 'designany.extands_[contenthash:8].min.js',
     path: path.resolve(__dirname, '../dist'),
-    library: 'DesignanyExtands',
+    library: 'DesignanyExtands_[hash]',
     libraryTarget: 'umd',
     umdNamedDefine: true,
     globalObject: 'window'
@@ -189,7 +189,7 @@ let baseconfig = {
       'window.jQuery': 'jquery'
     }),
     new MiniCssExtractPlugin({
-      filename: 'designany.extands.min.css',
+      filename: 'designany.extands_[contenthash:8].min.css',
       chunkFilename: `designany.extands.min_[contenthash:8].css`
     }),
     new VueLoaderPlugin()
